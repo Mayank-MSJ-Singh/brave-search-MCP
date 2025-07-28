@@ -16,7 +16,7 @@ def get_auth_token() -> str:
         token = auth_token_context.get()
         return token
     except LookupError:
-        token = os.getenv("BRAVE_API_KEY")
+        token = os.getenv("BRAVE_SEARCH_API_KEY")
         if not token:
             raise RuntimeError("Authentication token not found in context or environment")
         return token
